@@ -5,13 +5,19 @@ import UserList from '../../components/UserList/UserList';
 const UserListPage = () => {
   const [userNumber, setUserNumber] = useState('');
   const [data, setData] = useState([]);
+  const [isFetching, setIsFetching] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const inputHandler = ({ target: { value } }) => {
     setUserNumber(value);
   };
 
   const displayUsers = () => {
-    getUsers(userNumber).then(({ results }) => setData(results));
+    setIsFetching(true);
+    getUsers(userNumber)
+      .then(({ results }) => setData(results))
+      .catch((e) => setIsError(e))
+      .finally(() => setIsFetching(false));
     setUserNumber('');
   };
 
@@ -24,6 +30,8 @@ const UserListPage = () => {
         onChange={inputHandler}
       />
       <button onClick={displayUsers}>Initiate Transmission</button>
+      {isFetching && <div>Load data ...</div>}
+      {isError && <div>{isError.message}</div>}
       <UserList data={data} />
     </>
   );

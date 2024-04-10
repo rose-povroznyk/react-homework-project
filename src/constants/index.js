@@ -1,0 +1,8 @@
+export const CONTSTANTS = {
+  ACTIONS: {
+    SET_VALUE: 'SET_VALUE',
+    CREATE_ITEM: 'CREATE_ITEM',
+    DELETE_ITEM: 'DELETE_ITEM',
+    TOGGLE_DONE: 'TOGGLE_DONE',
+  },
+};
