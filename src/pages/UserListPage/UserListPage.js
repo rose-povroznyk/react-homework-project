@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import getUsers from '../../api';
 import UserList from '../../components/UserList/UserList';
+import styles from './UserListPage.module.sass';
 
 const UserListPage = () => {
   const [userNumber, setUserNumber] = useState('');
@@ -28,9 +29,12 @@ const UserListPage = () => {
         placeholder='Enter number of users to visualize'
         value={userNumber}
         onChange={inputHandler}
+        className={styles['user-input']}
       />
-      <button onClick={displayUsers}>Initiate Transmission</button>
-      {isFetching && <div>Load data ...</div>}
+      <button onClick={displayUsers} className={styles['display-button']}>
+        Initiate Transmission
+      </button>
+      {isFetching && <div className={styles.isFetching}>Load data ...</div>}
       {isError && <div>{isError.message}</div>}
       <UserList data={data} />
     </>

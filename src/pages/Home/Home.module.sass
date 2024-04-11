@@ -1,0 +1,45 @@
+.container
+    background-color: rgb(34,36,41)
+    max-width: 100%
+    min-height: 90vh
+
+.text-wrapper
+    margin: 0 auto
+    padding: 25px
+    text-align: center
+    width: 70%
+
+.animated
+    margin-top: 20px
+    animation: neon 1.5s ease infinite
+
+
+@keyframes neon 
+  0%, 100%
+    text-shadow: 0 0 10px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 20px #ef00e3a8, 0 0 2px #fed128, 2px 2px 2px #806914
+    color: #f5efcb
+
+  50%
+    text-shadow: 0 0 2px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 2px #800e0b, 4px 4px 2px #40340a
+    color: #eda0d3        
+
+.img-wrapper
+    position: relative
+    text-align: center    
+    img
+        width: 50%    
+.red-link
+    position: absolute
+    left: 33%
+    top: 35%
+    width: 9%
+    height: 9%
+    z-index: 5
+        
+.blue-link
+    position: absolute
+    right: 35%
+    top: 35%
+    width: 9%
+    height: 9%
+    z-index: 5

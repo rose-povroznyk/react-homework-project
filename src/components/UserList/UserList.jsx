@@ -1,34 +1,46 @@
 import React from 'react';
+import styles from './UserList.module.sass';
 
 const UserList = ({ data }) => {
   return (
     <>
-      {data.map((d) => {
-        const {
-          name: { title, first, last },
-          gender,
-          location: { country, state },
-          email,
-        } = d;
-        return (
-          <ul>
+      <ul className={styles.container}>
+        {' '}
+        {data.map((d) => {
+          const {
+            name: { title, first, last },
+            gender,
+            location: { country, state },
+            email,
+          } = d;
+          return (
             <li>
               <img
                 src={`https://robohash.org/${Math.floor(Math.random() * 101)}`}
                 alt='avatar'
               />
               <p>
-                User of the Matrix: {title} {first} {last}
+                <span>User of the Matrix: </span>
+                {title} {first} {last}
               </p>
-              <p>Binary code: {gender}</p>
               <p>
-                Hosting: {country}, {state}
+                <span>Binary code: </span>
+                {gender}
               </p>
-              <p>Communication channel: {email}</p>
+              <p>
+                <span>Hosting: </span>
+                {country}, {state}
+              </p>
+              <p>
+                <span>
+                  Communication channel: <br />
+                </span>
+                {email}
+              </p>
             </li>
-          </ul>
-        );
-      })}
+          );
+        })}
+      </ul>
     </>
   );
 };

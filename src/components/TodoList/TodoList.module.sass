@@ -1,0 +1,43 @@
+@import '../../common/styles/_partials'
+
+.task-input
+    @extend %input
+    color:  $dark-red-color
+    font-weight: bold
+
+.display-button
+    @extend %input
+    background-color: rgba(148, 238, 238, 0.4)
+    color: black
+    border: none
+    transition: all .3s
+    &:hover
+        background-color: $dark-red-color
+        color: white
+.todo-container
+    background-color: $bg-main-color
+    max-width: 100%
+    min-height: 90vh
+  
+    li
+        padding: 10px
+        &:hover
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3)
+            
+.del-btn
+    background-color: transparent
+    border: none
+    margin-left: 15px
+    svg
+        fill: rgba(148, 238, 238, 0.4)
+        &:hover
+            fill: red            
+.done-btn
+    background-color: transparent
+    border: none
+    margin-left: 10px
+    svg
+        fill: rgba(148, 238, 238, 0.4)
+        &:hover
+            fill: rgb(255, 100, 100)
+                  

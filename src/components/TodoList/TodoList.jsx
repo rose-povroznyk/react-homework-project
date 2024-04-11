@@ -1,7 +1,11 @@
 import React, { useReducer } from 'react';
 import { todoReducer } from '../../reducers/todoReducer';
+import { FaRegTrashAlt } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa6';
+
 import { defaultTasks } from './defaultTasks';
 import { CONTSTANTS } from '../../constants';
+import styles from './TodoList.module.sass';
 
 const { ACTIONS } = CONTSTANTS;
 
@@ -28,9 +32,12 @@ const TodoList = () => {
         placeholder='Define your task in the Matrix'
         value={state.task}
         onChange={inputHandler}
+        className={styles['task-input']}
       />
-      <button onClick={addTask}>Initiate</button>
-      <ul>
+      <button onClick={addTask} className={styles['display-button']}>
+        Initiate
+      </button>
+      <ul className={styles['todo-container']}>
         {state.tasks.map((task, i) => (
           <li
             key={i}
@@ -41,15 +48,17 @@ const TodoList = () => {
               onClick={() => {
                 dispatch({ type: ACTIONS.DELETE_ITEM, payload: i });
               }}
+              className={styles['del-btn']}
             >
-              X
+              <FaRegTrashAlt />
             </button>
             <button
               onClick={() => {
                 dispatch({ type: ACTIONS.TOGGLE_DONE, payload: i });
               }}
+              className={styles['done-btn']}
             >
-              I
+              <FaCheck className={styles.checked} />
             </button>
           </li>
         ))}

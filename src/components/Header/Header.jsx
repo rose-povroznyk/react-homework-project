@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import styles from './Header.module.sass';
 
 const Header = () => {
   return (
-    <header>
+    <header className={styles['header-container']}>
       <nav>
-        <ul>
+        <ul className={styles.list}>
           <li>
             <Link to='/'>Home</Link>
           </li>

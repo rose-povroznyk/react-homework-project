@@ -4,6 +4,7 @@ import TodoPage from './pages/TodoPage/TodoPage';
 import NotFound from './pages/NotFound/NotFound';
 import Home from './pages/Home/Home';
 import Header from './components/Header/Header';
+import './App.sass';
 
 function App() {
   return (

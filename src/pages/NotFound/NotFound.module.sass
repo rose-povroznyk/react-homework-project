@@ -1,0 +1,25 @@
+@import '../../common/styles/_partials'
+.container
+    position: relative
+    background-color: $bg-main-color
+    max-width: 100%
+    min-height: 90vh
+    text-align: center
+    font-size: 50px
+
+.main-img
+    position: absolute
+    left: 50%
+    right: 50%
+    transform: translateX(-50%)
+    bottom: 0%
+    width: 40%
+    // filter: blur(1px)
+
+.top-text    
+    @extend %position 
+    right: 15%
+    
+.bottom-text 
+    @extend %position
+    left: 25%          
