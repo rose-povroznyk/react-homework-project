@@ -14,7 +14,7 @@ const Header = () => {
             <Link to='users'>Users</Link>
           </li>
           <li>
-            <Link to='todo'>Todo</Link>
+            <Link to='todo'>ToDo</Link>
           </li>
         </ul>
       </nav>
